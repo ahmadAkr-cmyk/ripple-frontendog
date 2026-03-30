@@ -72,7 +72,7 @@ const FormLabel = React.forwardRef(({ className, ...props }, ref) => {
 });
 FormLabel.displayName = "FormLabel";
 
-const FormControl = React.forwardRef, React.ComponentPropsWithoutRef<typeof Slot>>(
+const FormControl = React.forwardRef(
   ({ ...props }, ref) => {
     const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
 

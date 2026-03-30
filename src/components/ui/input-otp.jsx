@@ -4,7 +4,7 @@ import { Dot } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-const InputOTP = React.forwardRef, React.ComponentPropsWithoutRef<typeof OTPInput>>(
+const InputOTP = React.forwardRef(
   ({ className, containerClassName, ...props }, ref) => (
     <OTPInput
       ref={ref}
@@ -16,7 +16,7 @@ const InputOTP = React.forwardRef, React.ComponentPropsWithoutRef<typeof OTPInpu
 );
 InputOTP.displayName = "InputOTP";
 
-const InputOTPGroup = React.forwardRef, React.ComponentPropsWithoutRef<"div">>(
+const InputOTPGroup = React.forwardRef(
   ({ className, ...props }, ref) => <div ref={ref} className={cn("flex items-center", className)} {...props} />,
 );
 InputOTPGroup.displayName = "InputOTPGroup";
@@ -46,7 +46,7 @@ const InputOTPSlot = React.forwardRef(({ index, className, ...props }, ref) => {
 });
 InputOTPSlot.displayName = "InputOTPSlot";
 
-const InputOTPSeparator = React.forwardRef, React.ComponentPropsWithoutRef<"div">>(
+const InputOTPSeparator = React.forwardRef(
   ({ ...props }, ref) => (
     <div ref={ref} role="separator" {...props}>
       <Dot />
