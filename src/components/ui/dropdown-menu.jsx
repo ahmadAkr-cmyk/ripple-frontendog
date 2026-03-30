@@ -1,5 +1,5 @@
-import * from "react";
-import * from "@radix-ui/react-dropdown-menu";
+import * as React from "react";
+import * as React from "@radix-ui/react-dropdown-menu";
 import { Check, ChevronRight, Circle } from "lucide-react";
 
 import { cn } from "@/lib/utils";

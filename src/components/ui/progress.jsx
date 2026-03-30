@@ -1,5 +1,5 @@
-import * from "react";
-import * from "@radix-ui/react-progress";
+import * as React from "react";
+import * as React from "@radix-ui/react-progress";
 
 import { cn } from "@/lib/utils";
 

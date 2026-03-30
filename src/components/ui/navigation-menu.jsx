@@ -1,5 +1,5 @@
-import * from "react";
-import * from "@radix-ui/react-navigation-menu";
+import * as React from "react";
+import * as React from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";
 import { ChevronDown } from "lucide-react";
 

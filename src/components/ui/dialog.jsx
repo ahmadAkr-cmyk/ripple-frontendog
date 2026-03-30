@@ -1,5 +1,5 @@
-import * from "react";
-import * from "@radix-ui/react-dialog";
+import * as React from "react";
+import * as React from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 
 import { cn } from "@/lib/utils";

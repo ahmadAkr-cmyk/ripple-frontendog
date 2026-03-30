@@ -1,5 +1,5 @@
-import * from "react";
-import * from "@radix-ui/react-label";
+import * as React from "react";
+import * as React from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
 import { Controller, ControllerProps, FieldPath, FieldValues, FormProvider, useFormContext } from "react-hook-form";
 

@@ -1,5 +1,5 @@
-import * from "react";
-import * from "@radix-ui/react-scroll-area";
+import * as React from "react";
+import * as React from "@radix-ui/react-scroll-area";
 
 import { cn } from "@/lib/utils";
 

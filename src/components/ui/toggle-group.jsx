@@ -1,5 +1,5 @@
-import * from "react";
-import * from "@radix-ui/react-toggle-group";
+import * as React from "react";
+import * as React from "@radix-ui/react-toggle-group";
 import { VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";

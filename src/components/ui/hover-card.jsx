@@ -1,5 +1,5 @@
-import * from "react";
-import * from "@radix-ui/react-hover-card";
+import * as React from "react";
+import * as React from "@radix-ui/react-hover-card";
 
 import { cn } from "@/lib/utils";
 

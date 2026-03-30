@@ -1,5 +1,5 @@
-import * from "react";
-import * from "recharts";
+import * as React from "react";
+import * as React from "recharts";
 
 import { cn } from "@/lib/utils";
 
