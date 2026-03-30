@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 // Format: { THEME_NAME: CSS_SELECTOR }
 const THEMES = { light: "", dark: ".dark" };
 
-    icon?: React.ComponentType;
+    icon?;
   } & ({ color?; theme? } | { color?; theme: Record<keyof typeof THEMES, string> });
 };
 
