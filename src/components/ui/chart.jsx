@@ -82,15 +82,7 @@ ${colorConfig
 
 const ChartTooltip = RechartsPrimitive.Tooltip;
 
-const ChartTooltipContent = React.forwardRef &
-    React.ComponentProps<"div"> & {
-      hideLabel?;
-      hideIndicator?;
-      indicator?: "line" | "dot" | "dashed";
-      nameKey?;
-      labelKey?;
-    }
->(
+const ChartTooltipContent = React.forwardRef(
   (
     {
       active,
@@ -218,12 +210,7 @@ ChartTooltipContent.displayName = "ChartTooltip";
 
 const ChartLegend = RechartsPrimitive.Legend;
 
-const ChartLegendContent = React.forwardRef &
-    Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
-      hideIcon?;
-      nameKey?;
-    }
->(({ className, hideIcon = false, payload, verticalAlign = "bottom", nameKey }, ref) => {
+const ChartLegendContent = React.forwardRef(({ className, hideIcon = false, payload, verticalAlign = "bottom", nameKey }, ref) => {
   const { config } = useChart();
 
   if (!payload?.length) {
