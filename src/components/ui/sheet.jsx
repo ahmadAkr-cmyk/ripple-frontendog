@@ -1,4 +1,4 @@
-import * as React from "@radix-ui/react-dialog";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { cva } from "class-variance-authority";
 import { X } from "lucide-react";
 import * as React from "react";
