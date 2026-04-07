@@ -46,6 +46,9 @@
   .gradient-bg {
     @apply bg-gradient-to-r from-primary to-accent;
   }
+  .logo-text {
+    @apply bg-gradient-to-r from-[#8B5CF6] to-[#3B82F6] bg-clip-text text-transparent font-bold tracking-wider;
+  }
   .card-dark {
     background: hsl(var(--card));
     color: hsl(var(--card-foreground));

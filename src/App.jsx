@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Messages from './pages/Messages';
 import Profile from './pages/Profile';
 import UserProfile from './pages/UserProfile';
+import Footer from './components/Footer';
 
 const App = () => (
   <AuthProvider>
@@ -22,15 +23,20 @@ const App = () => (
       }}
     />
     <BrowserRouter>
-      <Routes>
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-        <Route path="/messages" element={<ProtectedRoute><Messages /></ProtectedRoute>} />
-        <Route path="/profile/me" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-        <Route path="/profile/:id" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
-        <Route path="/" element={<Navigate to="/home" replace />} />
-        <Route path="*" element={<Navigate to="/home" replace />} />
-      </Routes>
+      <div className="flex flex-col min-h-screen">
+        <div className="flex-1">
+          <Routes>
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+            <Route path="/messages" element={<ProtectedRoute><Messages /></ProtectedRoute>} />
+            <Route path="/profile/me" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+            <Route path="/profile/:id" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
+            <Route path="/" element={<Navigate to="/auth" replace />} />
+            <Route path="*" element={<Navigate to="/auth" replace />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </BrowserRouter>
   </AuthProvider>
 );
