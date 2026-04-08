@@ -51,20 +51,14 @@ const OFFICIAL_BOT = {
 const WELCOME_MESSAGE = {
   _id: 'welcome-msg',
   sender: 'official-ripple',
-  text: `ðŸ‘‹ Hey! I'm Ripple AI â€” your smart assistant on Ripple Media! ðŸŒŠ
-
-ðŸš€ Ripple Media is a modern social platform built with passion by:
-
-ðŸ‘¨â€ðŸ’» Muhammad Ahmad
-   20-year-old Full Stack Web Developer
-
-ðŸ’¡ Built with React, Node.js, MongoDB & Cloudinary
-
-ðŸ“¬ Want to get in touch? Feel free to reach out anytime!
-
-ðŸ“ž Phone: +92 315 4603790
-
-Ask me anything about the app, your friends, or just chat for fun â€” I'm always here! `,
+  text: `👋 Hey! I'm Ripple AI — your smart assistant on Ripple Media! 🌊
+🚀 Ripple Media is a modern social platform built with passion by:
+👨‍💻 Muhammad Ahmad
+20-year-old Full Stack Web Developer
+💡 Built with React, Node.js, MongoDB & Cloudinary
+📬 Want to get in touch? Feel free to reach out anytime!
+📞 Phone: +92 315 4603790
+Ask me anything about the app, your friends, or just chat for fun — I'm always here! `,
   createdAt: new Date().toISOString(),
   isAI: true,
   isIntro: true,
