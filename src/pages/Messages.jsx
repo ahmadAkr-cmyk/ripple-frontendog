@@ -51,20 +51,20 @@ const OFFICIAL_BOT = {
 const WELCOME_MESSAGE = {
   _id: 'welcome-msg',
   sender: 'official-ripple',
-  text: `👋 Hey! I'm Ripple AI — your smart assistant on Ripple Media! 🌊
+  text: `ðŸ‘‹ Hey! I'm Ripple AI â€” your smart assistant on Ripple Media! ðŸŒŠ
 
-🚀 Ripple Media is a modern social platform built with passion by:
+ðŸš€ Ripple Media is a modern social platform built with passion by:
 
-👨‍💻 Muhammad Ahmad
+ðŸ‘¨â€ðŸ’» Muhammad Ahmad
    20-year-old Full Stack Web Developer
 
-💡 Built with React, Node.js, MongoDB & Cloudinary
+ðŸ’¡ Built with React, Node.js, MongoDB & Cloudinary
 
-📬 Want to get in touch? Feel free to reach out anytime!
+ðŸ“¬ Want to get in touch? Feel free to reach out anytime!
 
-📞 Phone: +92 315 4603790
+ðŸ“ž Phone: +92 315 4603790
 
-Ask me anything about the app, your friends, or just chat for fun — I'm always here! `,
+Ask me anything about the app, your friends, or just chat for fun â€” I'm always here! `,
   createdAt: new Date().toISOString(),
   isAI: true,
   isIntro: true,
@@ -88,6 +88,7 @@ const Messages = () => {
   const [imagePreview, setImagePreview] = useState(null)
   const [viewerImage, setViewerImage] = useState(null)
   const endRef = useRef(null)
+  const messagesContainerRef = useRef(null)
   const fileRef = useRef(null)
 
   const displayedMessages = activeChat?.isOfficial ? officialMessages : messages
@@ -147,8 +148,11 @@ const Messages = () => {
     return () => { cancelled = true }
   }, [activeChat?._id, activeChat?.isOfficial])
 
+  // âœ… FIXED: sirf message container scroll hoga, poora page nahi
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: 'smooth' })
+    const container = messagesContainerRef.current
+    if (!container) return
+    container.scrollTop = container.scrollHeight
   }, [displayedMessages, aiTyping])
 
   useEffect(() => () => {
@@ -202,7 +206,7 @@ const Messages = () => {
 
     setSending(true)
 
-    // ── AI chat ──
+    // â”€â”€ AI chat â”€â”€
     if (activeChat.isOfficial) {
       const messageToSend = trimmedText
       const localUserMessage = {
@@ -234,7 +238,7 @@ const Messages = () => {
         const aiReply = {
           _id: `ai-${Date.now()}`,
           sender: OFFICIAL_BOT._id,
-          text: data.reply || 'Main abhi reply nahi kar paya, dobara try karo 🌊',
+          text: data.reply || 'Main abhi reply nahi kar paya, dobara try karo ðŸŒŠ',
           createdAt: new Date().toISOString(),
           isAI: true,
           seen: true,
@@ -250,7 +254,7 @@ const Messages = () => {
         setOfficialMessages((prev) => [...prev, {
           _id: `ai-error-${Date.now()}`,
           sender: OFFICIAL_BOT._id,
-          text: 'Main abhi temporarily offline hoon 🌊',
+          text: 'Main abhi temporarily offline hoon ðŸŒŠ',
           createdAt: new Date().toISOString(),
           isAI: true,
           seen: true,
@@ -262,7 +266,7 @@ const Messages = () => {
       return
     }
 
-    // ── ✅ FIX: hamesha FormData bhejo ──
+    // â”€â”€ Regular chat â”€â”€
     try {
       const payload = new FormData()
       if (trimmedText) payload.append('text', trimmedText)
@@ -436,8 +440,8 @@ const Messages = () => {
                     </div>
                   </div>
 
-                  {/* Messages */}
-                  <div className="flex-1 overflow-y-auto px-4 md:px-6 py-5 space-y-4">
+                  {/* âœ… FIXED: ref={messagesContainerRef} lagaya - sirf yeh div scroll hogi */}
+                  <div ref={messagesContainerRef} className="flex-1 overflow-y-auto px-4 md:px-6 py-5 space-y-4">
                     {loadingMsgs ? (
                       <div className="flex justify-center py-8">
                         <Loader2 className="h-8 w-8 animate-spin text-primary" />
